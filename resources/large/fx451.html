@@ -1,0 +1,260 @@
+<html>
+
+
+    
+    <body>
+        
+
+
+<script language="JavaScript">
+<!--
+
+var display_elements = new Array(10);
+
+display_elements[0] = 0;
+display_elements[1] = 0;
+display_elements[2] = 0;
+display_elements[3] = 0;
+display_elements[4] = 0;
+display_elements[5] = 0;
+display_elements[6] = 0;
+display_elements[7] = 0;
+display_elements[8] = 0;
+display_elements[9] = 0;
+
+var display_segs = new Array(8);
+//preload display images
+display_segs[0] =new Image();
+display_segs[1] =new Image();
+display_segs[2] =new Image();
+display_segs[3] =new Image();
+display_segs[4] =new Image();
+display_segs[5] =new Image();
+display_segs[6] =new Image();
+display_segs[7] =new Image();
+
+
+// This defines the source of the display image 
+display_segs[0].src ="blank.png";
+display_segs[1].src ="seg1.png";
+display_segs[2].src ="seg2.png";
+display_segs[3].src ="seg3.png";
+display_segs[4].src ="seg4.png";
+display_segs[5].src ="seg5.png";
+display_segs[6].src ="seg6.png";
+display_segs[7].src ="seg7.png";
+
+var seg_decoder = [ 
+[0,0,0,0,0,0,0], // blank
+[0,0,1,0,0,0,1], // 1
+[0,1,1,1,1,1,0], // 2
+[0,1,1,1,0,1,1], // 3
+[1,0,1,1,0,0,1], // 4
+[1,1,0,1,0,1,1], // 5
+[1,1,0,1,1,1,1], // 6
+[1,1,1,0,0,0,1], // 7
+[1,1,1,1,1,1,1], // 8
+[1,1,1,1,0,1,1]  // 9
+[1,1,1,0,1,1,1], // 0
+]
+
+next_pos = 0;
+
+function image_click(button_id)
+{
+
+    //if( next_pos < 10 )
+    //{
+        ShiftDisplay();
+    //}
+    display_elements[0] = button_id;
+    next_pos++;
+    DrawDisplay();
+}
+
+function DrawDisplay()
+{
+    //59,126,75,150
+    for( var i=0; i<10; i++ )
+    {
+        DrawDigit(display_elements[i],i);
+    }    
+}
+
+function DrawDigit(d, p)
+{
+    
+    var idname = "lcd" + p;
+    for( var seg=0; seg<7; ++seg )
+    {
+
+        if( seg_decoder[d][seg] == 1 )
+        {
+            document.images['lcd'+p+seg].style.visibility="visible";
+        }
+        else
+        {
+            document.images['lcd'+p+seg].style.visibility="hidden";
+        }
+    }            
+}
+
+
+function ShiftDisplay()
+{
+
+    for( var i=9; i>0; i-- )
+    {
+        display_elements[i] = display_elements[i-1];
+    }
+}
+
+// -->
+</script>
+        
+      <div style="position:relative;">
+          <map name="calcMap" id="calc">
+            <area alt="0" coords="43,369,69,390" href="javascript:image_click(10)" shape="rect" />
+            <area alt="1" coords="43,330,70,351" href="javascript:image_click(1)" shape="rect" />
+            <area alt="2" coords="84,332,111,353" href="javascript:image_click(2)" shape="rect" />
+            <area alt="3" coords="126,330,151,352" href="javascript:image_click(3)" shape="rect" />
+            <area alt="4" coords="44,294,70,313" href="javascript:image_click(4)" shape="rect" />
+            <area alt="5" coords="84,292,111,314" href="javascript:image_click(5)" shape="rect" />
+            <area alt="6" coords="124,293,151,314" href="javascript:image_click(6)" shape="rect" />
+            <area alt="7" coords="44,255,70,276" href="javascript:image_click(7)" shape="rect" />
+            <area alt="8" coords="85,255,111,275" href="javascript:image_click(8)" shape="rect" />
+            <area alt="9" coords="126,255,153,276" href="javascript:image_click(9)" shape="rect" />
+          </map>
+          <img src="fx451.png"  usemap="#calcMap" alt="Casio fx-451 calculator image"/>       
+           
+          <img id="lcd96" src="seg7.png" style="position:absolute; left:223px; top:458px;" />
+          <img id="lcd95" src="seg6.png" style="position:absolute; left:223px; top:458px;" />
+          <img id="lcd94" src="seg5.png" style="position:absolute; left:223px; top:458px;" />
+          <img id="lcd93" src="seg4.png" style="position:absolute; left:223px; top:458px;" />
+          <img id="lcd92" src="seg3.png" style="position:absolute; left:223px; top:458px;" />
+          <img id="lcd91" src="seg2.png" style="position:absolute; left:223px; top:458px;" />
+          <img id="lcd90" src="seg1.png" style="position:absolute; left:223px; top:458px;" />
+          <img id="lcd9p" src="point.png" style="position:absolute; left:223px; top:458px;" />
+          
+          <img id="lcd86" src="seg7.png" style="position:absolute; left:267px; top:458px;" />
+          <img id="lcd85" src="seg6.png" style="position:absolute; left:267px; top:458px;" />
+          <img id="lcd84" src="seg5.png" style="position:absolute; left:267px; top:458px;" />
+          <img id="lcd83" src="seg4.png" style="position:absolute; left:267px; top:458px;" />
+          <img id="lcd82" src="seg3.png" style="position:absolute; left:267px; top:458px;" />
+          <img id="lcd81" src="seg2.png" style="position:absolute; left:267px; top:458px;" />
+          <img id="lcd80" src="seg1.png" style="position:absolute; left:267px; top:458px;" />
+          <img id="lcd8p" src="point.png" style="position:absolute; left:267px; top:458px;" />
+          
+          <img id="lcd76" src="seg7.png" style="position:absolute; left:311px; top:458px;" />
+          <img id="lcd75" src="seg6.png" style="position:absolute; left:311px; top:458px;" />
+          <img id="lcd74" src="seg5.png" style="position:absolute; left:311px; top:458px;" />
+          <img id="lcd73" src="seg4.png" style="position:absolute; left:311px; top:458px;" />
+          <img id="lcd72" src="seg3.png" style="position:absolute; left:311px; top:458px;" />
+          <img id="lcd71" src="seg2.png" style="position:absolute; left:311px; top:458px;" />
+          <img id="lcd70" src="seg1.png" style="position:absolute; left:311px; top:458px;" />
+          <img id="lcd7p" src="point.png" style="position:absolute; left:311px; top:458px;" />
+          
+          <img id="lcd66" src="seg7.png" style="position:absolute; left:355px; top:458px;" />
+          <img id="lcd65" src="seg6.png" style="position:absolute; left:355px; top:458px;" />
+          <img id="lcd64" src="seg5.png" style="position:absolute; left:355px; top:458px;" />
+          <img id="lcd63" src="seg4.png" style="position:absolute; left:355px; top:458px;" />
+          <img id="lcd62" src="seg3.png" style="position:absolute; left:355px; top:458px;" />
+          <img id="lcd61" src="seg2.png" style="position:absolute; left:355px; top:458px;" />
+          <img id="lcd60" src="seg1.png" style="position:absolute; left:355px; top:458px;" />
+          <img id="lcd6p" src="point.png" style="position:absolute; left:355px; top:458px;" />
+          
+          <img id="lcd56" src="seg7.png" style="position:absolute; left:399px; top:458px;" />
+          <img id="lcd55" src="seg6.png" style="position:absolute; left:399px; top:458px;" />
+          <img id="lcd54" src="seg5.png" style="position:absolute; left:399px; top:458px;" />
+          <img id="lcd53" src="seg4.png" style="position:absolute; left:399px; top:458px;" />
+          <img id="lcd52" src="seg3.png" style="position:absolute; left:399px; top:458px;" />
+          <img id="lcd51" src="seg2.png" style="position:absolute; left:399px; top:458px;" />
+          <img id="lcd50" src="seg1.png" style="position:absolute; left:399px; top:458px;" />
+          <img id="lcd5p" src="point.png" style="position:absolute; left:399px; top:458px;" />
+          
+          <img id="lcd46" src="seg7.png" style="position:absolute; left:443px; top:458px;" />
+          <img id="lcd45" src="seg6.png" style="position:absolute; left:443px; top:458px;" />
+          <img id="lcd44" src="seg5.png" style="position:absolute; left:443px; top:458px;" />
+          <img id="lcd43" src="seg4.png" style="position:absolute; left:443px; top:458px;" />
+          <img id="lcd42" src="seg3.png" style="position:absolute; left:443px; top:458px;" />
+          <img id="lcd41" src="seg2.png" style="position:absolute; left:443px; top:458px;" />
+          <img id="lcd40" src="seg1.png" style="position:absolute; left:443px; top:458px;" />
+          <img id="lcd4p" src="point.png" style="position:absolute; left:443px; top:458px;" />
+          
+          <img id="lcd36" src="seg7.png" style="position:absolute; left:487px; top:458px;" />
+          <img id="lcd35" src="seg6.png" style="position:absolute; left:487px; top:458px;" />
+          <img id="lcd34" src="seg5.png" style="position:absolute; left:487px; top:458px;" />
+          <img id="lcd33" src="seg4.png" style="position:absolute; left:487px; top:458px;" />
+          <img id="lcd32" src="seg3.png" style="position:absolute; left:487px; top:458px;" />
+          <img id="lcd31" src="seg2.png" style="position:absolute; left:487px; top:458px;" />
+          <img id="lcd30" src="seg1.png" style="position:absolute; left:487px; top:458px;" />
+          <img id="lcd3p" src="point.png" style="position:absolute; left:487px; top:458px;" />
+         
+          <img id="lcd26" src="seg7.png" style="position:absolute; left:531px; top:458px;" />
+          <img id="lcd25" src="seg6.png" style="position:absolute; left:531px; top:458px;" />
+          <img id="lcd24" src="seg5.png" style="position:absolute; left:531px; top:458px;" />
+          <img id="lcd23" src="seg4.png" style="position:absolute; left:531px; top:458px;" />
+          <img id="lcd22" src="seg3.png" style="position:absolute; left:531px; top:458px;" />
+          <img id="lcd21" src="seg2.png" style="position:absolute; left:531px; top:458px;" />
+          <img id="lcd20" src="seg1.png" style="position:absolute; left:531px; top:458px;" />          
+          <img id="lcd2p" src="point.png" style="position:absolute; left:531px; top:458px;" />
+                      
+          <img id="lcd16" src="seg7.png" style="position:absolute; left:575px; top:458px;" />
+          <img id="lcd15" src="seg6.png" style="position:absolute; left:575px; top:458px;" />
+          <img id="lcd14" src="seg5.png" style="position:absolute; left:575px; top:458px;" />
+          <img id="lcd13" src="seg4.png" style="position:absolute; left:575px; top:458px;" />
+          <img id="lcd12" src="seg3.png" style="position:absolute; left:575px; top:458px;" />
+          <img id="lcd11" src="seg2.png" style="position:absolute; left:575px; top:458px;" />
+          <img id="lcd10" src="seg1.png" style="position:absolute; left:575px; top:458px;" />          
+          <img id="lcd1p" src="point.png" style="position:absolute; left:575px; top:458px;" />
+                      
+          <img id="lcd06" src="seg7.png" style="position:absolute; left:619px; top:458px;" />
+          <img id="lcd05" src="seg6.png" style="position:absolute; left:619px; top:458px;" />
+          <img id="lcd04" src="seg5.png" style="position:absolute; left:619px; top:458px;" />
+          <img id="lcd03" src="seg4.png" style="position:absolute; left:619px; top:458px;" />
+          <img id="lcd02" src="seg3.png" style="position:absolute; left:619px; top:458px;" />
+          <img id="lcd01" src="seg2.png" style="position:absolute; left:619px; top:458px;" />
+          <img id="lcd00" src="seg1.png" style="position:absolute; left:619px; top:458px;" />          
+          <img id="lcd0p" src="point.png" style="position:absolute; left:619px; top:458px;" />
+                    
+          <img id="deg" src="deg.png" style="position:absolute; left:306px; top:431px;" />          
+          <img id="sd" src="sd.png" style="position:absolute; left:707px; top:431px;" />          
+          <img id="bin" src="bin.png" style="position:absolute; left:553px; top:431px;" />          
+          <img id="hex" src="hex.png" style="position:absolute; left:652px; top:431px;" />          
+          <img id="oct" src="oct.png" style="position:absolute; left:601px; top:431px;" />          
+          <img id="s" src="s.png" style="position:absolute; left:213px; top:430px;" />          
+          <img id="rad" src="rad.png" style="position:absolute; left:359px; top:432px;" />          
+          <img id="m" src="m.png" style="position:absolute; left:257px; top:435px;" />          
+          <img id="gra" src="gra.png" style="position:absolute; left:409px; top:432px;" />          
+          <img id="lcd103" src="seg4.png" style="position:absolute; left:179px; top:458px;" />
+                    
+          <img id="lcdb6" src="sseg7.png" style="position:absolute; left:691px; top:458px;" />
+          <img id="lcdb5" src="sseg6.png" style="position:absolute; left:691px; top:458px;" />
+          <img id="lcdb4" src="sseg5.png" style="position:absolute; left:691px; top:458px;" />
+          <img id="lcdb3" src="sseg4.png" style="position:absolute; left:691px; top:458px;" />
+          <img id="lcdb2" src="sseg3.png" style="position:absolute; left:691px; top:458px;" />
+          <img id="lcdb1" src="sseg2.png" style="position:absolute; left:691px; top:458px;" />
+          <img id="lcdb0" src="sseg1.png" style="position:absolute; left:691px; top:458px;" />            
+                    
+          <img id="lcda6" src="sseg7.png" style="position:absolute; left:719px; top:458px;" />
+          <img id="lcda5" src="sseg6.png" style="position:absolute; left:719px; top:458px;" />
+          <img id="lcda4" src="sseg5.png" style="position:absolute; left:719px; top:458px;" />
+          <img id="lcda3" src="sseg4.png" style="position:absolute; left:719px; top:458px;" />
+          <img id="lcda2" src="sseg3.png" style="position:absolute; left:719px; top:458px;" />
+          <img id="lcda1" src="sseg2.png" style="position:absolute; left:719px; top:458px;" />
+          <img id="lcda0" src="sseg1.png" style="position:absolute; left:719px; top:458px;" />          
+                                                           
+          <img id="lcdc3" src="sseg4.png" style="position:absolute; left:668px; top:458px;" />          
+      </div>
+    </body>
+</html>
+
+
+	
+
+
+
+</body>
+</html>
+
+

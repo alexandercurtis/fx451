@@ -1,0 +1,139 @@
+The following features have been implemented:
+---------------------------------------------
+
+  number entry
+    0         yes
+    1         yes
+    2         yes
+    3         yes
+    4         yes
+    5         yes
+    6         yes
+    7         yes
+    8         yes
+    9         yes
+    .         yes
+    equals    yes
+    AC        yes
+    C         yes
+    +/-       yes
+    A         no
+    B         no
+    C         no
+    D         no
+    E         no
+    F         no
+  operations
+    +         yes
+    -         yes
+    x         yes
+    /         yes
+    k         no
+  memory and registers
+    X<->Y     no
+    X<->M     no
+    M+        no
+    M-        no
+    Min       no
+    MR        no    
+  brackets
+    [(...     no
+    ...)]     no    
+  percent
+    sh-equals no    
+  fractions
+    ' ' ''    no
+    !' ' ''   no
+    a b/c     no
+    R<->P     no
+    P<->R     no    
+  stats
+    sh-AC     no
+    mode-.    no
+    DEL       no
+    !x        no
+    sn        no
+    sn-1      no
+    xD        no
+    Sx^2      no
+    Sx        no
+    n         no    
+  constants
+    sh-1      yes
+    sh-2      yes
+    sh-3      yes
+    sh-4      yes
+    sh-5      yes
+    sh-6      yes
+    sh-7      yes
+    sh-8      yes
+    sh-9      yes
+    sh-+      yes
+    sh--      no
+    sh-x      no
+    sh-/      no
+    exp-pi    yes
+  random number generator
+    sh-.      yes
+    sh-0      no
+  exps
+    exp       yes
+    eng       no
+    !eng      no
+    mode-7    no
+    mode-8    no
+    mode-9    no
+  computing
+    NEG       no
+    NOT       no
+    AND       no
+    OR        no
+    XOR       no
+    XNOR      no
+  bases
+    mode-0    no
+    mode-1    no
+    mode-2    no
+    mode-3    no
+  logarithms
+    log       no
+    ln        no
+  powers
+    x^y       no
+    x^1/y     no
+    e^x       no
+    10^x      no
+    x^2       no
+    sqrt      no
+    cbrt      no
+    1/x       no
+    x!        no
+  calculus
+    mode-4    no
+    mode-5    no
+    mode-6    no
+    sin       no
+    cos       no
+    tan       no
+    sh-sin    no
+    sh-cos    no
+    sh-tan    no
+    sin-1     no
+    sh-sin-1  no
+    cos-1     no
+    sh-cos-1  no
+    tan-1     no
+    sh-tan-1  no
+  conversions
+    'F='C     no
+    in=mm     no
+    gal=l     no
+    lb=kg     no
+    oz=g      no
+    cal=J     no
+    mmHg=kPa  no
+    atm=MPa   no
+
+
+--
+

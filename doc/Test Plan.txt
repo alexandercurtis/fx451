@@ -1,0 +1,85 @@
+Tests for fx451 emulator
+========================
+
+Last modified: 08Jan08
+----------------------
+
+
+Questions:
+----------
+Experiment to see value of y (use x<->y : x<->m : x<->y ; M now contains Y, x and y unchanged) in the following scenarios:
+  2+3*4=
+  2+3*4+5=
+  2+3*4*5=
+
+
+Current development: K mode
+---------------------------
+--,++,xx and // all go into K mode.
+_+,x/,x+ etc just do last op entered
+
+
+Other TODOs:
+------------
+Make display flash briefly when non-AC pressed in E mode.
+
+
+Tests currently failing:
+------------------------
+12**2.3=9 +/- = (-108)
+2.5//74=85.2= (34.08)
+17++=== (68)
+1.7**=== (8.3521)
+3*6**4=5 +/- = (-90)
+4*(2+3)//56=23= (1.15)
+5***= (25, no k)
+
+Tests passed:
+-------------
+1+1=
+1.0+1.0=
+1.1+2.2=
+1.999999999 + 0.000000001 =
+1000.1 + 0.1 =
+0.1+0.1=
+0+0=
+0+0.1=
+0.1+0=
+-1 + 1 =
+1 + -1 =
+1000.1 + -0.1 =
+-23.4 + -23.4 =
+0+ -1 =
+-1 + -2 =
+2 + 5 C 6 =
+2 C 3 + 5 =
+sh 9 + 1 =
+1 E 2 + (should show 100)
+1 E 2 + 1 =
+1 E 32 + 1 =
+sh 7 + 1 =
+sh 2 + 1 =
+sh 4 +/- + sh 4 +/- =
+1 + sh 9 =
+1 + sh 7 =
+1 + sh 2 =
+1 + sh 3 =
+1 E 2 =
+1 +/- =
+2+3=
+2-3=
+2*3=
+2/3=
+2/6=
+0-2=
+0*2=
+0/2=
+2-0=
+2*0=
+2/0=
+5+2*3=
+2+3*4+
+2++=
+2.3++3=6= (8.3)
+5.6--7=4.5 +/- = (-10.1)
+--
